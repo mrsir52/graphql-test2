@@ -1,0 +1,17 @@
+type Post {
+  id: ID! @unique
+  isPublished: Boolean!
+  title: String!
+  text: String!
+}
+
+type Player {
+  id: ID! @unique
+  firsName: String!
+  LastName: String!
+  maxBench: Int
+  maxSquat: Int
+  position: String!
+
+
+}
