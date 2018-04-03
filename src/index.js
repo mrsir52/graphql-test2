@@ -15,6 +15,12 @@ import DraftsPage from './components/DraftsPage'
 import CreatePage from './components/CreatePage'
 import DetailPage from './components/DetailPage'
 import PlayerList from './pages/PlayerList'
+import Home from './pages/Home'
+import Playerpage from './pages/Playerpage'
+import Lifts from './pages/Lifts'
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 import 'tachyons'
 import './index.css'
@@ -24,49 +30,12 @@ const client = new ApolloClient({ uri: 'http://localhost:4000' })
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
-      <Fragment>
-        <nav className="pa3 pa4-ns">
-          <Link
-            className="link dim black b f6 f5-ns dib mr3"
-            to="/"
-            title="Feed"
-          >
-            Blog
-          </Link>
-          <NavLink
-            className="link dim f6 f5-ns dib mr3 black"
-            activeClassName="gray"
-            exact={true}
-            to="/"
-            title="Feed"
-          >
-            Feed
-          </NavLink>
-          <NavLink
-            className="link dim f6 f5-ns dib mr3 black"
-            activeClassName="gray"
-            exact={true}
-            to="/drafts"
-            title="Drafts"
-          >
-            Drafts
-          </NavLink>
-          <Link
-            to="/create"
-            className="f6 link dim br1 ba ph3 pv2 fr mb2 dib black"
-          >
-            + Create Draft
-          </Link>
-        </nav>
-        <div className="fl w-100 pl4 pr4">
           <Switch>
-            <Route exact path="/" component={PlayerList} />
-            <Route path="/drafts" component={DraftsPage} />
-            <Route path="/create" component={CreatePage} />
-            <Route path="/post/:id" component={DetailPage} />
+            <Route exact path="/" component={Home} />
+            <Route path="/Playerlist" component={PlayerList} />
+            <Route path="/Playerpage" component={Playerpage} />
+            <Route path="/Lifts" component={Lifts} />
           </Switch>
-        </div>
-      </Fragment>
     </Router>
   </ApolloProvider>,
   document.getElementById('root'),

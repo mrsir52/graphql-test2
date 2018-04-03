@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
+
+
 class PlayerList extends Component {
     renderPlayers(){
         return this.props.data.players.map( player => {
@@ -18,6 +20,7 @@ class PlayerList extends Component {
 
             <div>
                 {this.renderPlayers()}
+                <h1>Hello from players page</h1>
             </div>
 
         );

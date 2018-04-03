@@ -13,5 +13,4 @@ type Player {
   maxSquat: Int
   position: String!
 
-
 }
